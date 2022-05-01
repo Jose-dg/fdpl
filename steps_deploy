@@ -1,14 +1,46 @@
-1.
+* Librerias para desplegar
 
-27/4/2022 19:31:34
-100.3
+    1. pip install gunicorn
+    https://docs.gunicorn.org/en/stable/install.html
+
+    2. pip install psycopg2
+    https://pypi.org/project/psycopg2/
+
+    3. pip install python-decouple
+    https://pypi.org/project/python-decouple/
+
+    4. pip install dj-database-url
+    https://pypi.org/project/dj-database-url/
+
+    5. pip install whitenoise
+    http://whitenoise.evans.io/en/stable/
+
+* Requerimientos
+
+    pip freeze > requirements.txt
+    Crea el documento requiremets.txt con las librerias necesarias
+
+* Agregar a urls.py principal
+
+    from django.conf import settings
+    from django.conf.urls.static import static
+
+    urlpatterns = [
+    pat... + static(settings.STATIC_URL, document_root=settings.STATIC_ROOT)
+
+* Necesario para deploy
+  1. Crear folder 'static'
+  2. Agregar file .keep en static
+
+* Create Procfile a la altura de manage.py
 
 
-27/4/2022 16:32:07
-100.1
 
-26/4/2022 9:35:57
-101.4
 
-25/4/2022 18:19:03
-104.8
+
+
+
+
+
+
+
