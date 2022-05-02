@@ -1,3 +1,7 @@
+* Instalar heroku globalmente
+    Desde una terminal run:
+    https://devcenter.heroku.com/articles/heroku-cli
+
 * Librerias para desplegar
 
     1. pip install gunicorn
@@ -20,6 +24,15 @@
     pip freeze > requirements.txt
     Crea el documento requiremets.txt con las librerias necesarias
 
+* Agregar configuración static files en settings.py
+
+    STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
+    STATIC_URL = 'static/'
+
+    STATICFILES_DIRS = (
+        os.path.join(BASE_DIR, 'static')
+    )
+
 * Agregar a urls.py principal
 
     from django.conf import settings
@@ -33,6 +46,13 @@
   2. Agregar file .keep en static
 
 * Create Procfile a la altura de manage.py
+
+* Confituracion heroku
+
+    1. heroku login --> Ingresar
+    2. heroku create fdpl
+    3. heroku git:remote -a fdpl
+    4. heroku addons:create heroku-postgresql:hobby-dev
 
 
 
